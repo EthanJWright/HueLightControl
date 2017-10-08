@@ -6,6 +6,9 @@ import sys
 hue = HueController.hue_rgb("192.168.1.2")
 hue.set_group("fan")
 
+if(len(sys.argv) > 2):
+    hue.set_group(sys.argv[2])
+
 if(sys.argv[1] == 'off'):
     hue.on(False)
     quit()

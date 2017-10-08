@@ -9,6 +9,8 @@ class hue_rgb():
     def __init__(self, _ip):
         self.Point = collections.namedtuple('Point', ['x', 'y'])
         self.b = Bridge(_ip)
+        self.b.connect()
+        self.b.get_api()
         self.group = None
         self.lights = []
 
@@ -30,6 +32,7 @@ class hue_rgb():
 
     def set_light_list(self):
         g = self.b.get_group(self.group, 'lights')
+        self.lights = []
         lights = self.b.get_light_objects()
         for light in g:
             self.lights.append(lights[int(light)-1])
@@ -44,9 +47,6 @@ class hue_rgb():
         red = rgb[0]
         green = rgb[1]
         blue = rgb[2]
-        self.b = Bridge('192.168.1.2')
-        self.b.connect()
-        self.b.get_api()
 
         point = self.convert_rgb(red, green, blue)
         x = point[0]
@@ -55,9 +55,6 @@ class hue_rgb():
             light.xy = [x,y]
 
     def on(self, state):
-        self.b = Bridge('192.168.1.2')
-        self.b.connect()
-        self.b.get_api()
         for light in self.lights:
             light.on = state
 
