@@ -3,9 +3,18 @@ from flask_api import FlaskAPI, status, exceptions
 import HueController
 from colour import Color
 import simplejson
+import datetime
+import time
 
 app = FlaskAPI(__name__)
 hue = HueController.hue_rgb("192.168.1.2")
+
+def logger(information):
+    f = open('api.log', 'a+')
+    ts = time.time()
+    f.write(information +  "  Timestamp: " + str(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))  + '\n')
+    f.close
+
 def set_hue():
     hue = HueController.hue_rgb("192.168.1.2")
 
@@ -23,14 +32,13 @@ def set_brightness(brightness):
 
 def handle_transition(payload):
     hue.transition(payload)
-    print payload
 
 def handle_hue(payload):
     set_hue()
     try:
         hue.set_group(payload['group'])
     except:
-        return failed("couldn't get group")
+        return failed("couldn't get group", payload)
     if(payload.has_key('transitiontime')):
         handle_transition(payload)
     if(payload.has_key('brightness')):
@@ -39,12 +47,17 @@ def handle_hue(payload):
         try:
             set_rgb(payload['rgb'])
         except:
-            return failed("couldn't change rgb")
+            return failed("couldn't change rgb", payload)
     if(payload.has_key('on')):
         hue_on(payload['on'])
-    return {'API Status' : 'suceeded'}
+    return suceeded("success", payload)
 
-def failed(result):
+def suceeded(result, payload):
+    logger(result + str(payload))
+    return {'API Status' : result}
+
+def failed(result, payload):
+    logger(result + str(payload))
     return {
             'api result' : result
             }
@@ -57,7 +70,7 @@ def get_request():
         if(payload['action'] == 'hue'):
             return handle_hue(payload['params']);
         else:
-            return failed("couldn't get params")
+            return failed("couldn't get params", payload)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='192.168.1.3')
+    app.run(host='192.168.1.17')
