@@ -39,38 +39,17 @@ def failed(result):
             }
 
 @app.route("/", methods=['GET', 'POST'])
-def notes_list():
+def get_request():
     """
     List or create notes.
     """
     if request.method == 'POST':
 #        action = str(request.data.get('action', ''))
         payload = request.get_json(silent=True)
-        print payload['action']
         if(payload['action'] == 'hue'):
             return handle_hue(payload['params']);
         else:
             return failed("couldn't get params")
-
-@app.route("/<string:key>/", methods=['GET', 'PUT', 'DELETE'])
-def notes_detail(key):
-    """
-    Retrieve, update or delete note instances.
-    """
-    if request.method == 'PUT':
-        note = str(request.data.get('text', ''))
-        notes[key] = note
-        return note_repr(key)
-
-    elif request.method == 'DELETE':
-        notes.pop(key, None)
-        return '', status.HTTP_204_NO_CONTENT
-
-    # request.method == 'GET'
-    if key not in notes:
-        raise exceptions.NotFound()
-    return note_repr(key)
-
 
 if __name__ == "__main__":
     app.run(debug=True, host='192.168.1.3')
