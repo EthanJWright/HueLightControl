@@ -7,8 +7,8 @@ payload = {
         'params' : {
             'group' : 'fan',
             'on' : True,
-            'change' : 'on',
-            'rgb' : '.3,.3,.3'
+            'rgb' : '.0,.6,.9',
+            'brightness' : '100'
             }
         }
 response = requests.post(url,json=payload).json()

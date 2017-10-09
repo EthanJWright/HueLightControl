@@ -15,15 +15,18 @@ def set_rgb(rgb):
 
 def hue_on(state):
     hue.on(state)
-    return {'lights' : state}
 
-
+def set_brightness(brightness):
+    print brightness
+    hue.brightness(int(float(brightness) * 2.54))
 
 def handle_hue(payload):
     try:
         hue.set_group(payload['group'])
     except:
         return failed("couldn't get group")
+    if(payload.has_key('brightness')):
+        set_brightness(payload['brightness'])
     if(payload.has_key('rgb')):
         try:
             set_rgb(payload['rgb'])
@@ -40,9 +43,6 @@ def failed(result):
 
 @app.route("/", methods=['GET', 'POST'])
 def get_request():
-    """
-    List or create notes.
-    """
     if request.method == 'POST':
 #        action = str(request.data.get('action', ''))
         payload = request.get_json(silent=True)
