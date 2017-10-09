@@ -62,3 +62,6 @@ class hue_rgb():
         for light in self.lights:
             light.on = state
 
+    def transition(self, command):
+        for light in self.lights:
+            light.transitiontime = float(command['transitiontime'])

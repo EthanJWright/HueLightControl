@@ -5,8 +5,10 @@ from colour import Color
 import simplejson
 
 app = FlaskAPI(__name__)
-
 hue = HueController.hue_rgb("192.168.1.2")
+def set_hue():
+    hue = HueController.hue_rgb("192.168.1.2")
+
 
 def set_rgb(rgb):
     rgb = rgb.split(',')
@@ -17,14 +19,20 @@ def hue_on(state):
     hue.on(state)
 
 def set_brightness(brightness):
-    print brightness
     hue.brightness(int(float(brightness) * 2.54))
 
+def handle_transition(payload):
+    hue.transition(payload)
+    print payload
+
 def handle_hue(payload):
+    set_hue()
     try:
         hue.set_group(payload['group'])
     except:
         return failed("couldn't get group")
+    if(payload.has_key('transitiontime')):
+        handle_transition(payload)
     if(payload.has_key('brightness')):
         set_brightness(payload['brightness'])
     if(payload.has_key('rgb')):
