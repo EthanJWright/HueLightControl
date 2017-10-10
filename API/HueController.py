@@ -56,7 +56,7 @@ class hue_rgb():
 
     def brightness(self, amount):
         for light in self.lights:
-            light.brightness = float(amount)
+            light.brightness = int(amount)
 
     def on(self, state):
         for light in self.lights:

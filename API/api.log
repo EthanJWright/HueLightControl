@@ -260,3 +260,12 @@ success{u'on': False, u'rgb': u'.9,.9,.3', u'group': u'fan', u'brightness': u'10
 success{u'on': True, u'rgb': u'.9,.9,.3', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:05:45
 success{u'on': False, u'rgb': u'.9,.9,.3', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:05:48
 couldn't get params{u'action': u'hue', u'params': {u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.0,.9', u'group': u'fan', u'brightness': u'100'}}  Timestamp: 2017-10-10 00:26:28
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.0,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:28:56
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.0,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:29:25
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.0,.9', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 00:30:32
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:30:49
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:30:59
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'10,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:12
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:22
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,1,1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:31
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,1,1', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:43
