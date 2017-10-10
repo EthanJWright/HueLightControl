@@ -4,9 +4,9 @@ import json
 url = 'http://73.78.132.90:5000/'
 payload = {
         'hue' : {
-            'group' : 'fan',
+            'group' : 'bedroom',
             'on' : True,
-            'rgb' : '.3,.0,.9',
+            'rgb' : '1,1,1',
             'brightness' : '100',
             'transitiontime' : '20'
             }

@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import org.apache.commons.io.IOUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -18,19 +15,30 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
- * Created by trevor on 12/5/16.
+ * Ethan Wright
  */
 
 public class MainActivity extends Activity {
+    public String api_call;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button testButton = (Button)findViewById(R.id.button);
-        testButton.setOnClickListener(new View.OnClickListener() {
+        Button lights_on = (Button)findViewById(R.id.hue_on);
+        Button lights_off = (Button)findViewById(R.id.hue_off);
+        lights_on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                api_call = "{`hue` : { `group` : `all`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `True` }}".replace('`','"');
+                new AsyncUploadTest().execute();
+            }
+        });
+         lights_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                api_call = "{`hue` : { `group` : `all`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `False` }}".replace('`','"');
                 new AsyncUploadTest().execute();
             }
         });
@@ -56,7 +64,6 @@ public class MainActivity extends Activity {
                 connection.setRequestProperty("Accept","application/json");
 
                 OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
-                String api_call = "{`hue` : { `group` : `fan`, `rgb` : `.9,.9,.5`, `brightness` : `100`, `on` : `True` }}".replace('`','"');
                 writer.write(api_call);
                 writer.flush();
                 writer.close();
