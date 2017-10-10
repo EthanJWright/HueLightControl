@@ -5,9 +5,15 @@ from colour import Color
 import simplejson
 import datetime
 import time
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read('api.properties')
+hueIP = config.get('Hue', 'ip')
+hostIP=config.get('Host', 'ip')
 
 app = FlaskAPI(__name__)
-hue = HueController.hue_rgb("192.168.1.2")
+hue = HueController.hue_rgb(hueIP)
 
 def logger(information):
     f = open('api.log', 'a+')
@@ -16,7 +22,7 @@ def logger(information):
     f.close
 
 def set_hue():
-    hue = HueController.hue_rgb("192.168.1.2")
+    hue = HueController.hue_rgb(hueIP)
 
 
 def set_rgb(rgb):
@@ -67,10 +73,10 @@ def get_request():
     if request.method == 'POST':
 #        action = str(request.data.get('action', ''))
         payload = request.get_json(silent=True)
-        if(payload['action'] == 'hue'):
-            return handle_hue(payload['params']);
+        if(payload.has_key('hue')):
+            return handle_hue(payload['hue']);
         else:
             return failed("couldn't get params", payload)
 
 if __name__ == "__main__":
-    app.run(host='192.168.1.17')
+    app.run(debug=True,host=hostIP)
