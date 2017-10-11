@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import org.apache.commons.io.IOUtils;
@@ -45,6 +47,35 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Button lights_on = (Button)findViewById(R.id.hue_on);
         Button lights_off = (Button)findViewById(R.id.hue_off);
+        Switch bedroom = (Switch) findViewById(R.id.bedroom_on);
+        Switch living_room = (Switch) findViewById(R.id.living_on);
+
+        bedroom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    new AsyncUploadTest().execute();
+                    api_call = "{`hue` : { `group` : `bedroom`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `True` }}".replace('`','"');
+                }else{
+                    api_call = "{`hue` : { `group` : `bedroom`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `False` }}".replace('`','"');
+                    new AsyncUploadTest().execute();
+                }
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+            }
+        });
+        living_room.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    api_call = "{`hue` : { `group` : `fan`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `True` }}".replace('`','"');
+                    new AsyncUploadTest().execute();
+                }else{
+                    api_call = "{`hue` : { `group` : `fan`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `False` }}".replace('`','"');
+                    new AsyncUploadTest().execute();
+                }
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+            }
+        });
 
 
         api_call = "{`check hue` : { `group` : `fan` } }".replace('`','"');
@@ -75,18 +106,34 @@ public class MainActivity extends Activity {
             final ImageView light_icon = (ImageView)  findViewById(R.id.light_icon);
             final Button lights_on = (Button) findViewById(R.id.hue_on);
             final Button lights_off = (Button) findViewById(R.id.hue_off);
+            final Switch bed_status = (Switch)  findViewById(R.id.bedroom_on);
+            final Switch living_status = (Switch)  findViewById(R.id.living_on);
             JSONObject hue = mainObject.getJSONObject("hue result");
-            JSONObject state = hue.getJSONObject("state");
-            final Boolean all_on = state.getBoolean("all_on");
+            JSONObject fan = hue.getJSONObject("fan");
+            JSONObject bedroom = hue.getJSONObject("bedroom");
+            JSONObject bed_state = bedroom.getJSONObject("state");
+            JSONObject state = fan.getJSONObject("state");
+            final Boolean fan_all_on = state.getBoolean("all_on");
+            final Boolean bed_all_on = bed_state.getBoolean("all_on");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if(all_on){
+                    if(bed_all_on){
+                        bed_status.setChecked(true);
+                    }
+                    if(bed_all_on == false){
+                        bed_status.setChecked(false);
+                    }
+
+                    if(fan_all_on){
+                        living_status.setChecked(true);
                         light_icon.setImageResource(R.drawable.ic_moon_on);
                         lights_off.setElevation(12);
                         lights_on.setElevation(6);
 
-                    }else{
+                    }
+                    if(fan_all_on == false){
+                        living_status.setChecked(false);
                         light_icon.setImageResource(R.drawable.ic_moon_off);
                         lights_on.setElevation(12);
                         lights_off.setElevation(6);
