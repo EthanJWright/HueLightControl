@@ -37,11 +37,17 @@ class hue_rgb():
         for light in g:
             self.lights.append(lights[int(light)-1])
 
+    def get_group_status(self): 
+        return self.b.get_group(self.group)
+
     def set_group(self, name):
-        for group in self.b.get_group():
-            if(self.b.get_group(int(group), 'name') == str(name)):
-                self.group = int(group)
-        self.set_light_list()
+        if(name.lower() == 'all'):
+            self.lights = self.b.get_light_objects()
+        else:
+            for group in self.b.get_group():
+                if(self.b.get_group(int(group), 'name') == str(name)):
+                    self.group = int(group)
+            self.set_light_list()
 
     def rgb_set(self, rgb):
         red = float(rgb[0])
@@ -59,8 +65,9 @@ class hue_rgb():
             light.brightness = int(amount)
 
     def on(self, state):
+        state = bool(state)
         for light in self.lights:
-            light.on = bool(state)
+            light.on = state
 
     def transition(self, command):
         for light in self.lights:

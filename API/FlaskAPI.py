@@ -11,9 +11,9 @@ config = ConfigParser.ConfigParser()
 config.read('api.properties')
 hueIP = config.get('Hue', 'ip')
 hostIP=config.get('Host', 'ip')
-
 app = FlaskAPI(__name__)
 hue = HueController.hue_rgb(hueIP)
+hue.on(False)
 
 def logger(information):
     f = open('api.log', 'a+')
@@ -31,7 +31,14 @@ def set_rgb(rgb):
     hue.rgb_set(rgb)
 
 def hue_on(state):
-    hue.on(state)
+    print state
+    if(type(state) is str or type(state) is unicode):
+        if(state == 'True' or state == 'true'):
+            hue.on(True)
+        if(state == 'False' or state == 'false'):
+            hue.on(False)
+    else:
+        hue.on(state)
 
 def set_brightness(brightness):
     hue.brightness(int(float(brightness) * 2.54))
@@ -40,12 +47,14 @@ def handle_transition(payload):
     hue.transition(payload)
 
 def handle_hue(payload):
+    print 'in handle hue'
     set_hue()
     try:
         hue.set_group(payload['group'])
     except:
         return failed("couldn't get group", payload)
     if(payload.has_key('transitiontime')):
+        print "transition"
         handle_transition(payload)
     if(payload.has_key('brightness')):
         set_brightness(payload['brightness'])
@@ -56,11 +65,20 @@ def handle_hue(payload):
             return failed("couldn't change rgb", payload)
     if(payload.has_key('on')):
         hue_on(payload['on'])
-    return suceeded("success", payload)
+    return hue_suceeded("success", payload)
 
-def suceeded(result, payload):
+def handle_check_hue(payload):
+    try:
+        hue.set_group(payload['group'])
+        print hue.get_group_status()
+        return hue.get_group_status()
+    except:
+        return failed("couldn't get group", payload)
+
+def hue_suceeded(result, payload):
     logger(result + str(payload))
-    return {'API Status' : result}
+    return { 'hue result' : hue.get_group_status() }
+            
 
 def failed(result, payload):
     logger(result + str(payload))
@@ -71,10 +89,15 @@ def failed(result, payload):
 @app.route("/", methods=['GET', 'POST'])
 def get_request():
     if request.method == 'POST':
-#        action = str(request.data.get('action', ''))
         payload = request.get_json(silent=True)
         if(payload.has_key('hue')):
             return handle_hue(payload['hue']);
+        if(payload.has_key('check hue')):
+            try:
+                handle_check_hue(payload['check hue'])
+                return hue_suceeded("get group", payload)
+            except: 
+                return failed("Couldn't get group", payload)
         else:
             return failed("couldn't get params", payload)
 
