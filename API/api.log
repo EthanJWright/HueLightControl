@@ -269,3 +269,433 @@ success{u'transitiontime': u'20', u'on': True, u'rgb': u'10,.9,.9', u'group': u'
 success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:22
 success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,1,1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:31
 success{u'transitiontime': u'20', u'on': True, u'rgb': u'1,1,1', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 00:31:43
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.3,.0,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:48:19
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 00:48:31
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 02:50:40
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:13
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:15
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:15
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:16
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:17
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:18
+couldn't get grouptest  Timestamp: 2017-10-10 03:29:20
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:32:37
+couldn't get grouptest  Timestamp: 2017-10-10 03:32:56
+couldn't get grouptest  Timestamp: 2017-10-10 03:32:57
+couldn't get grouptest  Timestamp: 2017-10-10 03:32:58
+couldn't get grouptest  Timestamp: 2017-10-10 03:33:17
+couldn't get grouptest  Timestamp: 2017-10-10 03:36:51
+couldn't get grouptest  Timestamp: 2017-10-10 03:36:52
+success{u'group': u'fan'}  Timestamp: 2017-10-10 03:37:46
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:38:20
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:39:33
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:40:06
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:40:34
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:41:00
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:41:55
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:44:12
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:44:48
+success{u'transitiontime': u'20', u'on': False, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:45:05
+success{u'transitiontime': u'20', u'on': False, u'rgb': u'.9,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:47:33
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:47:54
+success{u'transitiontime': u'20', u'on': False, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:48:26
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:49:16
+success{u'on': u'False', u'group': u'fan'}  Timestamp: 2017-10-10 03:49:35
+success{u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:50:50
+success{u'transitiontime': u'20', u'on': False, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:53:32
+success{u'on': u'True', u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:54:52
+success{u'on': u'True', u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:54:55
+success{u'on': u'True', u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:55:07
+success{u'on': u'True', u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:56:38
+success{u'on': u'True', u'group': u'fan'}  Timestamp: 2017-10-10 03:57:23
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:57:46
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:58:00
+success{u'rgb': u'.3,.8,.1', u'group': u'fan'}  Timestamp: 2017-10-10 03:58:23
+success{u'rgb': u'.3,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:59:03
+success{u'rgb': u'.3,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 03:59:06
+couldn't get group{"group":"fan","rgb":".1,.8,.9","brightness":"100"}  Timestamp: 2017-10-10 04:01:42
+couldn't get group{"group":"fan","rgb":".1,.8,.9","brightness":"100"}  Timestamp: 2017-10-10 04:01:44
+couldn't get group{"group":"fan","rgb":".1,.8,.3","brightness":"100"}  Timestamp: 2017-10-10 04:02:09
+couldn't get group{"group":"fan","rgb":".1,.8,.3","brightness":"100"}  Timestamp: 2017-10-10 04:02:13
+couldn't get group{"group":"fan","rgb":".1,.8,.3","brightness":"100"}  Timestamp: 2017-10-10 04:02:38
+couldn't get group{"group":"fan","rgb":".9,.1,.1","brightness":"100"}  Timestamp: 2017-10-10 04:03:16
+couldn't get group{"group":"fan","rgb":".9,.1,.1","brightness":"100"}  Timestamp: 2017-10-10 04:03:19
+couldn't get group{"group":"fan","rgb":".3,.5,.5","brightness":"100"}  Timestamp: 2017-10-10 04:04:49
+success{u'rgb': u'.3,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:07:45
+success{u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:08:08
+success{u'on': u'True', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:08:39
+success{u'rgb': u'.9,.5,.5', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 04:09:18
+success{u'rgb': u'.9,.5,.5', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 04:09:22
+success{u'rgb': u'.9,.5,.5', u'group': u'bedroom', u'brightness': u'100'}  Timestamp: 2017-10-10 04:09:58
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:10:44
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:11:10
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:11:13
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:12:11
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:12:24
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:13:09
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:13:20
+success{u'on': u'true', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:13:41
+success{u'on': u'False', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:14:46
+success{u'on': u'True', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:18:30
+success{u'on': u'True', u'rgb': u'.9,.5,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:18:33
+success{u'on': u'True', u'rgb': u'.9,.9,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:22:38
+success{u'on': u'True', u'rgb': u'.9,.9,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:34:57
+success{u'on': u'True', u'rgb': u'.9,.9,.5', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:35:01
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:35:18
+success{u'off': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:05
+success{u'off': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:08
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:11
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:12
+success{u'off': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:14
+success{u'off': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:15
+success{u'on': u'False', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:32
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:34
+success{u'on': u'False', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:36
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:37
+success{u'on': u'False', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:44
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:46
+success{u'on': u'False', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:50
+success{u'on': u'True', u'rgb': u'.0,.9,.0', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:40:51
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:18
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:20
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:23
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:31
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:34
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:45
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:42:49
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:45
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:50
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:52
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:54
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:56
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:43:58
+success{u'on': u'False', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:46:24
+success{u'on': u'True', u'rgb': u'.0,.9,.9', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:46:26
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:46:58
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:48
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:51
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:53
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:53
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:55
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:47:59
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:51:08
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:51:12
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:51:15
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:52:43
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:52:45
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:52:46
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:52:48
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:52:59
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:00
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:09
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:18
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:20
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:39
+couldn't get group{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:53:41
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:03
+couldn't get group{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:04
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:31
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:32
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:34
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-10 04:54:52
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:13
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:15
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:18
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:27
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:31
+success{u'on': u'False', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:33
+success{u'on': u'True', u'rgb': u'.6,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:34
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:51
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:57
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:55:59
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:57:03
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:57:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:21
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:22
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:24
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:26
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:27
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:28
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 04:58:31
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:06:42
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:06:44
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:06:45
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:12:54
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:12:55
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:16:03
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:16:05
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:18:09
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:18:11
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:23
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:25
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:28
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:35
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:37
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:19:39
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:21:57
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:21:58
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:23:50
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:23:51
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:03
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:05
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:07
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:09
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:10
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:11
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:12
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:12
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:13
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:13
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:13
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:14
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:15
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:17
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:17
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:17
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:18
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:18
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:18
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:20
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:20
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:20
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:21
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:22
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:22
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:23
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:29
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:29:33
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:30:07
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:30:15
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:30:22
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:30:27
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:30:27
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:53:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:53:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:53:01
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:53:36
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 05:53:39
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 16:33:13
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 16:33:15
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 16:33:18
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 16:33:22
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:53:57
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:53:59
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:54:01
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:54:02
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:54:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 20:54:06
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 23:29:01
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 23:29:03
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 23:29:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-10 23:29:05
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 00:34:59
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:38
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:41
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:43
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:45
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:46
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:34:47
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:35:54
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 01:35:55
+couldn't get group{u'group': u'fan'}  Timestamp: 2017-10-11 02:07:29
+couldn't get group{u'group': u'fan'}  Timestamp: 2017-10-11 02:08:44
+couldn't get group{u'group': u'fan'}  Timestamp: 2017-10-11 02:09:02
+success{u'group': u'fan'}  Timestamp: 2017-10-11 02:09:16
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:18:15
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:18:17
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:18:18
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:37:18
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:37:19
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:37:20
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:37:50
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:39:10
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:39:11
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:43:38
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:43:39
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:45:53
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:45:54
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:45:57
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:45:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:47:37
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:47:38
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:47:40
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:49:16
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:49:17
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:51:52
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:51:53
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:54:34
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:55:34
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:55:57
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:56:27
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:57:53
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 02:58:28
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:58:34
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:58:35
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:58:52
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:58:53
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:59:21
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:59:22
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 02:59:23
+Couldn't get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:02:48
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:02:53
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:02:54
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:20:17
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:25
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:27
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:28
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:30
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:30
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:32
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:34
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:37
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:38
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:40
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:43
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:20:46
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:20:57
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:21:42
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:28:12
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:28:16
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:28:17
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:28:18
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:28:19
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:29:26
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:29:28
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:29:30
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:29:33
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:29:45
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:29:47
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:30:32
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:30:38
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:30:40
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:30:51
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:30:57
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:31:00
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:31:05
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:31:08
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:31:52
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:31:57
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:31:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:00
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:03
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:03
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:07
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:09
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:11
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:13
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:14
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:32:15
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:33:26
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:34:14
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:34:27
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:34:31
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:34:43
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:07
+success{u'transitiontime': u'20', u'on': True, u'rgb': u'.6,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:17
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:35:26
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:28
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:34
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:37
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:42
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:47
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:35:49
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:36:00
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:36:03
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:36:08
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:36:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:37:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:37:27
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:37:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:01
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:06
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:08
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:11
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:16
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:19
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:49
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:38:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:11
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:15
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'fan', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:17
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:39:33
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:37
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:41
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:45
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:50
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:53
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:58
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:58
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:59
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:39:59
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:40:00
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:41:02
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:41:04
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:41:07
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 03:42:43
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:42:45
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:42:47
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:49
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:50
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:51
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:52
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:53
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:43:53
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:44:00
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:44:01
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:44:09
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 03:44:11
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:00:16
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:00:17
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:15:58
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:16:01
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:16:12
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:16:20
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:16:36
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:16:37
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:17:19
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:17:30
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:20:15
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:20:17
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:25:18
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:25:20
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:27:30
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:27:34
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:27:35
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:28:29
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:28:31
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:28:32
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:28:34
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:28:36
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 04:55:29
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:55:30
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:55:31
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:55:34
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 04:55:35
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 05:04:52
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 05:04:57
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 05:05:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 05:05:01
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:19:19
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:20:31
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:30:12
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:31:59
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:32:35
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:33:55
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:33:57
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:34:03
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:39:13
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:39:21
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:40:52
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:45:16
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:46:31
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:46:46
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:52:00
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:52:01
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:52:03
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:53:42
+success{u'on': u'False', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:53:45
+success{u'on': u'True', u'rgb': u'.8,.6,.1', u'group': u'all', u'brightness': u'100'}  Timestamp: 2017-10-11 13:53:47
+get group{u'check hue': {u'group': u'fan'}}  Timestamp: 2017-10-11 13:54:04
