@@ -6,7 +6,6 @@ payload = {
         'hue' : {
             'group' : 'fan',
             'on' : True,
-            'rgb' : '.6,.6,.1',
             'brightness' : '100',
             'transitiontime' : '20'
             }

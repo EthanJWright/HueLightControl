@@ -40,6 +40,13 @@ class hue_rgb():
     def get_group_status(self): 
         return self.b.get_group(self.group)
 
+    def get_all(self):
+        groups = {}
+        for group in self.b.get_group():
+            groups[str(self.b.get_group(int(group), 'name'))] = self.b.get_group(int(group))
+        return groups
+
+
     def set_group(self, name):
         if(name.lower() == 'all'):
             self.lights = self.b.get_light_objects()

@@ -53,6 +53,10 @@ def handle_hue(payload):
         hue.set_group(payload['group'])
     except:
         return failed("couldn't get group", payload)
+    if(payload.has_key('on')):
+        # If turning lights on, we need to turn on before anything else
+        if(payload['on'] or payload['on'] == 'true' or payload['on'] == 'True'):
+            hue_on(payload['on'])
     if(payload.has_key('transitiontime')):
         print "transition"
         handle_transition(payload)
@@ -64,20 +68,41 @@ def handle_hue(payload):
         except:
             return failed("couldn't change rgb", payload)
     if(payload.has_key('on')):
-        hue_on(payload['on'])
-    return hue_suceeded("success", payload)
+        # If turning off, we need to turn off last
+        if(not payload['on'] or payload['on'] == 'False' or payload['on'] == 'false'):
+            hue_on(payload['on'])
+    return hue_suceeded()
 
 def handle_check_hue(payload):
     try:
         hue.set_group(payload['group'])
         print hue.get_group_status()
-        return hue.get_group_status()
+        return hue_suceeded()
     except:
         return failed("couldn't get group", payload)
 
-def hue_suceeded(result, payload):
-    logger(result + str(payload))
-    return { 'hue result' : hue.get_group_status() }
+def get_ip():
+    ip_stuff = {}
+    riv_set = False
+    ethan_set = False
+    # Check results from nmap scan
+    with open('/home/pi/nmap_results.txt') as f:
+        content = f.readlines()
+        content = [x.strip() for x in content]
+        for element in content:
+            if('192.168.1.6' in str(element)):
+                ethan_set = True
+        for element in content:
+            if('192.168.1.7' in str(element)):
+                riv_set = True
+        ip_stuff['Ethan'] = ethan_set
+        ip_stuff['River'] = riv_set
+
+    return ip_stuff
+
+
+def hue_suceeded():
+    return { 'hue result' : hue.get_all(), 'ip_result' : get_ip() }
             
 
 def failed(result, payload):
@@ -93,9 +118,8 @@ def get_request():
         if(payload.has_key('hue')):
             return handle_hue(payload['hue']);
         if(payload.has_key('check hue')):
-            try:
-                handle_check_hue(payload['check hue'])
-                return hue_suceeded("get group", payload)
+            try:  
+                return handle_check_hue(payload['check hue'])
             except: 
                 return failed("Couldn't get group", payload)
         else:
