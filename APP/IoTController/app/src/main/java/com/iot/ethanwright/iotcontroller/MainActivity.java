@@ -1,5 +1,6 @@
 package com.iot.ethanwright.iotcontroller;
 import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
@@ -29,7 +31,7 @@ import java.util.Random;
 public class MainActivity extends Activity {
     public String api_call;
     public String[] adjectives =  {"dangerous","penitent","like","silly","military","difficult","equable","magical","lucky","exotic","fluffy","dashing","wonderful","future","axiomatic","outrageous","striped","dramatic","strong","spicy","faithful","splendid","tricky","delicate","jumpy","precious","decisive","teeny-tiny","talented","loud","astonishing","profuse","large","beneficial","various","regular","little","coherent","diligent","lively","unusual","fluttering","equal","spotted","luxuriant","adjoining","swift","bright","fast","gorgeous","tasteful","hushed","caring","square","bouncy","ambitious","dynamic","frail","fanatical","awesome","kind","cluttered","political","electric","cuddly","immense","reminiscent","fierce","enormous","thundering","selective","safe","learned","lazy","happy","long-term","towering","testy","silent","tranquil","grateful","elated","proud","aboriginal","powerful","high-pitched","waiting","violet","fabulous","plausible","supreme","different","youthful","momentous","decorous","fretful","distinct","purple","efficient","spiffy","nippy","aquatic"};
-    public String[] nouns = {"lumber","house","orange","shake","branch","yak","furniture","flock","zinc","yam","home boy","judge","flame","bird","baseball","burst","rainstorm","history","rod","grain","lamp","flower","cake","cobweb","idea","stream","pie","smile","pencil","plane","bird","snail","celery","mouse","truck","ink","camera","foot","tooth","loaf","card","sheet","flag","basketball","voice","minister","door","stew","maid","jelly","drawer","picture","hill","passenger","plastic","scale","nest","sister","invention","direction","horse","soup","wall","cow","committee","fork","man","toothpaste","dirt","bucket","moon","floor","paper","spy","engine","animal","cream","laborer","wine","cub","riddle","oatmeal","creature","insect","cracker","tongue","vacation","cloth","metal","volleyball"};
+    public String[] nouns = {"lumber","house","orange","shake","branch","yak","furniture","flock","zinc","yam","home boy","judge","flame","bird","baseball","burst","rainstorm","history","rod","grain","lamp","flower","cake","cobweb","idea","stream","pie","smile","pencil","plane","bird","snail","celery","mouse","truck","ink","camera","foot","tooth","loaf","card","sheet","flag","basketball","voice","minister","door","stew","maid","jelly","drawer","picture","hill","passenger","plastic","scale","nest","sister","invention","direction","horse","soup","wall","cow","committee","fork","man","toothpaste","dirt","bucket","moon","floor","paper","spy","engine","animal","cream","laborer","wine","cub","riddle","oatmeal","creature","insect","cracker","tongue","vacation","cloth","metal","volleyball", "Apple","Apricot","Avocado","Banana","Bilberry","Blackberry","Blackcurrant","Blueberry","Boysenberry","Crab apples","Currant","Cherry","Cherimoya","Chico fruit","Cloudberry","Coconut","Cranberry","Cucumber","Custard apple","Damson","Date","Dragonfruit","Durian","Elderberry","Feijoa","Fig","Goji berry","Gooseberry","Grape","Raisin","Grapefruit","Guava","Honeyberry","Huckleberry","Jabuticaba","Jackfruit","Jambul","Jujube","Juniper berry","Kiwano","Kiwifruit","Kumquat","Lemon","Lime","Loquat","Longan","Lychee","Mango","Mangosteen","Marionberry","Melon","Cantaloupe","Honeydew","Watermelon","Miracle fruit","Mulberry","Nectarine","Nance","Olive","Orange","Blood orange","Clementine","Mandarine","Tangerine","Papaya","Passionfruit","Peach","Pear","Persimmon","Physalis","Plantain","Plum","Prune","Pineapple","Plumcot","Pomegranate","Pomelo","Purple mangosteen","Quince","Raspberry","Salmonberry","Rambutan","Redcurrant","Salal berry","Salak","Satsuma","Soursop","Star fruit","Solanum quitoense","Strawberry","Tamarillo","Tamarind","Ugli fruit","Yuzu"};
 
     public void randomize(){
         TextView randText = (TextView) findViewById(R.id.random);
@@ -40,6 +42,7 @@ public class MainActivity extends Activity {
         randText.setText(message);
     }
 
+    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,8 +50,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Button lights_on = (Button)findViewById(R.id.hue_on);
         Button lights_off = (Button)findViewById(R.id.hue_off);
+        Button refresh = (Button) findViewById(R.id.refresh);
         Switch bedroom = (Switch) findViewById(R.id.bedroom_on);
         Switch living_room = (Switch) findViewById(R.id.living_on);
+
 
         bedroom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -59,8 +64,6 @@ public class MainActivity extends Activity {
                     api_call = "{`hue` : { `group` : `bedroom`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `False` }}".replace('`','"');
                     new AsyncUploadTest().execute();
                 }
-                // do something, the isChecked will be
-                // true if the switch is in the On position
             }
         });
         living_room.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -69,19 +72,25 @@ public class MainActivity extends Activity {
                     api_call = "{`hue` : { `group` : `fan`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `True` }}".replace('`','"');
                     new AsyncUploadTest().execute();
                 }else{
-                    api_call = "{`hue` : { `group` : `fan`, `rgb` : `.8,.6,.1`, `brightness` : `100`, `on` : `False` }}".replace('`','"');
+                    api_call = "{`hue` : { `group` : `fan`, `on` : `False` }}".replace('`','"');
                     new AsyncUploadTest().execute();
                 }
-                // do something, the isChecked will be
-                // true if the switch is in the On position
             }
         });
 
 
-        api_call = "{`check hue` : { `group` : `fan` } }".replace('`','"');
+        api_call = "{`hue` : { `group` : `fan` } }".replace('`','"');
         new AsyncUploadTest().execute();
-
         randomize();
+
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                api_call = "{`hue` : { `group` : `fan` } }".replace('`','"');
+                new AsyncUploadTest().execute();
+            }
+        });
 
 
         lights_on.setOnClickListener(new View.OnClickListener() {
@@ -103,14 +112,14 @@ public class MainActivity extends Activity {
     private class AsyncUploadTest extends AsyncTask<Void,Void,Boolean>
     {
         private void setText(JSONObject mainObject) throws JSONException {
-            final ImageView light_icon = (ImageView)  findViewById(R.id.light_icon);
             final ImageView river_icon = (ImageView)  findViewById(R.id.river_home);
             final ImageView ethan_icon = (ImageView)  findViewById(R.id.ethan_home);
+
             final Button lights_on = (Button) findViewById(R.id.hue_on);
             final Button lights_off = (Button) findViewById(R.id.hue_off);
             final Switch bed_status = (Switch)  findViewById(R.id.bedroom_on);
             final Switch living_status = (Switch)  findViewById(R.id.living_on);
-            JSONObject hue = mainObject.getJSONObject("hue result");
+            JSONObject hue = mainObject.getJSONObject("hue_result");
             JSONObject fan = hue.getJSONObject("fan");
             JSONObject bedroom = hue.getJSONObject("bedroom");
             JSONObject bed_state = bedroom.getJSONObject("state");
@@ -122,9 +131,12 @@ public class MainActivity extends Activity {
 
             final Boolean fan_all_on = state.getBoolean("all_on");
             final Boolean bed_all_on = bed_state.getBoolean("all_on");
+
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    Toast.makeText(context, "Update Succeeded", Toast.LENGTH_SHORT).show();
                     if (river) {
                         river_icon.setImageResource(R.drawable.ic_home);
                     }else{
@@ -145,14 +157,12 @@ public class MainActivity extends Activity {
 
                     if(fan_all_on){
                         living_status.setChecked(true);
-                        light_icon.setImageResource(R.drawable.ic_moon_on);
                         lights_off.setElevation(12);
                         lights_on.setElevation(6);
 
                     }
                     if(fan_all_on == false){
                         living_status.setChecked(false);
-                        light_icon.setImageResource(R.drawable.ic_moon_off);
                         lights_on.setElevation(12);
                         lights_off.setElevation(6);
                     }
@@ -195,6 +205,10 @@ public class MainActivity extends Activity {
                     setText(mainObject);
                     Log.d("Test", IOUtils.toString(connection.getInputStream()));
                     Log.d("Test", "result read");
+                }
+                else{
+                    Log.d("Test", "Didn't resolve UI");
+
                 }
 
             } catch (MalformedURLException e) {
