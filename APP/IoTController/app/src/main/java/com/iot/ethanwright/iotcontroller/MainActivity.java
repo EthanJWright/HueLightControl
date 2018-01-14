@@ -112,22 +112,16 @@ public class MainActivity extends Activity {
     private class AsyncUploadTest extends AsyncTask<Void,Void,Boolean>
     {
         private void setText(JSONObject mainObject) throws JSONException {
-            final ImageView river_icon = (ImageView)  findViewById(R.id.river_home);
-            final ImageView ethan_icon = (ImageView)  findViewById(R.id.ethan_home);
-
             final Button lights_on = (Button) findViewById(R.id.hue_on);
             final Button lights_off = (Button) findViewById(R.id.hue_off);
             final Switch bed_status = (Switch)  findViewById(R.id.bedroom_on);
             final Switch living_status = (Switch)  findViewById(R.id.living_on);
+
             JSONObject hue = mainObject.getJSONObject("hue_result");
             JSONObject fan = hue.getJSONObject("fan");
             JSONObject bedroom = hue.getJSONObject("bedroom");
             JSONObject bed_state = bedroom.getJSONObject("state");
             JSONObject state = fan.getJSONObject("state");
-
-            JSONObject home = mainObject.getJSONObject("ip_result");
-            final Boolean river = home.getBoolean("River");
-            final Boolean ethan = home.getBoolean("Ethan");
 
             final Boolean fan_all_on = state.getBoolean("all_on");
             final Boolean bed_all_on = bed_state.getBoolean("all_on");
@@ -137,17 +131,6 @@ public class MainActivity extends Activity {
                 @Override
                 public void run() {
                     Toast.makeText(context, "Update Succeeded", Toast.LENGTH_SHORT).show();
-                    if (river) {
-                        river_icon.setImageResource(R.drawable.ic_home);
-                    }else{
-                        river_icon.setImageResource(R.drawable.ic_out);
-                    }
-                    if (ethan) {
-                        ethan_icon.setImageResource(R.drawable.ic_home);
-                    }else{
-                        ethan_icon.setImageResource(R.drawable.ic_out);
-                    }
-
                     if(bed_all_on){
                         bed_status.setChecked(true);
                     }
@@ -201,9 +184,10 @@ public class MainActivity extends Activity {
                 if(httpResult == HttpURLConnection.HTTP_OK)
                 {
                     String text = IOUtils.toString(connection.getInputStream());
+                    Log.d("Test", IOUtils.toString(connection.getInputStream()));
                     JSONObject mainObject = new JSONObject(text);
                     setText(mainObject);
-                    Log.d("Test", IOUtils.toString(connection.getInputStream()));
+                    Log.d("Test", mainObject.getString("hue_result"));
                     Log.d("Test", "result read");
                 }
                 else{

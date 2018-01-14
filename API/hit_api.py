@@ -11,5 +11,13 @@ payload = {
             }
         }
 
+payload = {
+        'computer' : {
+            'brightness' : 100,
+            'rgb' : [255, 0, 255],
+            'on' : True 
+            }
+        }
 response = requests.post(url,json=payload).json()
 print response
+
