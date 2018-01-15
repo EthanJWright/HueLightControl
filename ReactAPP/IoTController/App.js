@@ -144,11 +144,6 @@ export default class App extends React.Component {
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Living Room Remote</Text>
-				<Slider
-				  value={this.state.value}
-				  onValueChange={value => this.setState({ value })}
-				/>
-            <Text style = {styles.text}>Volume: {Math.trunc(this.state.value * 100) / 100}</Text>
               <View style={styles.buttonsContainer}>
               <Text style={styles.text}>Living Room Light</Text>
                 <ToggleSwitch 
@@ -313,6 +308,7 @@ const styles = StyleSheet.create({
     },
   rgbContainer: {
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center'
     },
   modalContainer: {

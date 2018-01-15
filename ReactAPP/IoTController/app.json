@@ -1,5 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "name" : "IoT React",
+    "version" : "1.0.0",
+    "sdkVersion": "23.0.0",
+    "icon" : "/home/god/HueLightControl/ReactAPP/IoTController/img/res/mipmap-xxxhdpi/ic_iot.png",
+    android : {
+      package : "com.ethan.iotcontroller"
+    }
   }
 }
