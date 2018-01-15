@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native';
-import { Picker, Button, Alert, Modal } from 'react-native';
+import { Picker, Button, Alert, Modal, Switch } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import Swiper from 'react-native-swiper';
 import Slider from 'react-native-slider';
@@ -114,14 +114,43 @@ function getCurrent(callback){
 }
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      fan : false,
+      bedroom : false,
+      value: 0.2,
+      user: '',
+      modalVisible: false,
+      computer_rgb : '#ffffff'
+    }
+  }
 
-  state = {
-    fan : false,
-    bedroom : false,
-    value: 0.2,
-    user: '',
-    modalVisible: false,
-    computer_rgb : '#ffffff',
+
+  componentDidMount(){
+    json = {'hue' : {'group' : 'all'}}
+    fetch('http://73.78.132.90:5000/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(json),
+    })
+    .then(response => response.json())
+      .then(responseJson => {
+        if(responseJson.hue_result){
+          this.setState({
+            fan: Boolean(responseJson.hue_result.fan.state.all_on),
+            bedroom:Boolean(responseJson.hue_result.bedroom.state.all_on)
+          })
+        return responseJson
+        }
+        else{
+          return {'hue_result' : 'failed'}
+        }
+      })
+    console.log('hit api');
   }
 
   openModal(){
@@ -137,6 +166,15 @@ export default class App extends React.Component {
     this.setState({user : user})
   }
 
+  toggleFan = (value) => {
+    this.setState({fan:value});
+    toggleSpecific(value, 'fan');
+  }
+  toggleBedroom = (value) => {
+    this.setState({bedroom:value});
+    toggleSpecific(value, 'bedroom');
+  }
+
 
   render() {
     return (
@@ -145,26 +183,18 @@ export default class App extends React.Component {
           <View style={styles.box}>
               <Text style={styles.title}>Living Room Remote</Text>
               <View style={styles.buttonsContainer}>
-              <Text style={styles.text}>Living Room Light</Text>
-                <ToggleSwitch 
-                  style={styles.slider}
-                  isOn={this.state.fan}
-                  onColor='green'
-                  offColor='red'
-                  labelStyle={{color : 'black', fontWeight: '900'}}
-                  size='large'
-                  onToggle={(isOn) => toggleSpecific(isOn, 'fan')}
-                />
-              <Text style={styles.text}>Bedroom Lights</Text>
-                <ToggleSwitch
-                  style={styles.slider}
-                  isOn={this.state.bedroom}
-                  onColor='green'
-                  offColor='red'
-                  labelStyle={{color : 'black', fontWeight: '900'}}
-                  size='large'
-                  onToggle={(isOn) => toggleSpecific(isOn, 'bedroom')}
-                />
+              <Text style={styles.labelText}>Living Room Lights</Text>
+              <Switch
+                style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }}
+                onValueChange={this.toggleFan}
+                value={this.state.fan}
+              />
+              <Text style={styles.labelText}> Bedroom Lights</Text>
+              <Switch
+                style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }}
+                onValueChange={this.toggleBedroom}
+                value={this.state.bedroom}
+              />
               </View>
               <View style={styles.buttonsContainer}>
                   <TouchableOpacity style={styles.button}
@@ -301,6 +331,7 @@ const styles = StyleSheet.create({
         color: 'white'
     },
   labelText:{    
+    padding: 20,
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: moderateScale(14),

@@ -18,6 +18,11 @@ payload = {
             'on' : True 
             }
         }
+payload = {
+        'hue' : {
+            'group' : 'all'
+            }
+        }
 response = requests.post(url,json=payload).json()
 print response
 
