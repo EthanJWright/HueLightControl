@@ -6,7 +6,6 @@ import Swiper from 'react-native-swiper';
 import Slider from 'react-native-slider';
 
 import { scale, moderateScale, verticalScale} from './scaling';
-import ToggleSwitch from 'toggle-switch-react-native'
 import { ColorPicker, toHsv } from 'react-native-color-picker'
 import rand_string from './rand_strings';
 

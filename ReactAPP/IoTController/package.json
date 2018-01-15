@@ -21,17 +21,16 @@
   },
   "dependencies": {
     "expo": "^23.0.6",
+    "hex-rgb" : "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-flex": "^2.2.8",
-    "react-http-request": "^1.0.3",
     "react-native": "0.50.3",
     "react-native-color-picker": "^0.4.0",
     "react-native-slider": "^0.11.0",
     "react-native-swiper": "^1.5.13",
     "react-native-toast-android": "^2.0.0",
-    "react-toggle-switch": "^3.0.4",
-    "toggle-switch-react-native": "^0.2.0"
+    "react-toggle-switch": "^3.0.4"
   },
   "bin": {
     "bundle": "./bin/bundle"
