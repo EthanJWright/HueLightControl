@@ -80,11 +80,11 @@ function set_computer(color, on){
   apiCall(json);
 }
 
-function lightsOn(){
-  set_lights.on('all', (json)=>console.log('on'));
+function lightsOn(callback){
+  set_lights.on('all', callback);
 }
-function lightsOff(){
-  set_lights.off('all', (json)=>console.log('off'));
+function lightsOff(callback){
+  set_lights.off('all', callback);
 }
 
 function toggleSpecific(isOn, group, callback){
@@ -204,12 +204,18 @@ export default class App extends React.Component {
               <Icon name="md-refresh" size={30} color="#FFFFFF" />
               </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
-                      onPress={lightsOn}
+                      onPress={() => {
+                        lightsOn((json)=>console.log('here'));
+                        this.getUpdate();
+                      }}
                   >
                   <Text style={styles.buttonText}>Lights On</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
-                      onPress={lightsOff}
+                      onPress={() => {
+                        lightsOff((json)=>console.log('here'));
+                        this.getUpdate();
+                      }}
                   >
                   <Text style={styles.buttonText}>Lights Off</Text>
                   </TouchableOpacity>
