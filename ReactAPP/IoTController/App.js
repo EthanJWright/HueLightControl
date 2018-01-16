@@ -206,15 +206,21 @@ export default class App extends React.Component {
                   <TouchableOpacity style={styles.button}
                       onPress={() => {
                         lightsOn((json)=>console.log('here'));
-                        this.getUpdate();
-                      }}
+                        this.setState({
+                          'fan' : true,
+                          'bedroom' : true
+                        });
+                      }} 
                   >
                   <Text style={styles.buttonText}>Lights On</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
                       onPress={() => {
                         lightsOff((json)=>console.log('here'));
-                        this.getUpdate();
+                        this.setState({
+                          'fan' : false,
+                          'bedroom' : false
+                        });
                       }}
                   >
                   <Text style={styles.buttonText}>Lights Off</Text>
