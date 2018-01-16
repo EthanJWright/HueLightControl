@@ -9,6 +9,8 @@ import { scale, moderateScale, verticalScale} from './scaling';
 import { ColorPicker, toHsv } from 'react-native-color-picker'
 import rand_string from './rand_strings';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 const hexRgb = require('hex-rgb');
 
 var hue_report = {
@@ -18,7 +20,7 @@ var hue_report = {
   }
 }
 
-function apiCall(json){
+function apiCall(json, callback){
   fetch('http://73.78.132.90:5000/', {
     method: 'POST',
     headers: {
@@ -34,6 +36,7 @@ function apiCall(json){
       hue_report.hue.fan = responseJson.hue_result.fan.action.on
       console.log(hue_report.hue.bedroom);
       console.log(hue_report.hue.fan);
+      callback(responseJson);
       return responseJson
       }
       else{
@@ -44,28 +47,23 @@ function apiCall(json){
 }
 
 var set_lights = {
-  'on' : function(group){
+  'on' : function(group, callback){
     apiCall({
       'hue' : {
         'group' : group,
         'on' : 'True',
         'brightness' : 100
       }
-    })
+    }, callback)
   },
-  'off' : function(group){
+  'off' : function(group, callback){
     apiCall({
       'hue' : {
         'group' : group,
         'on' : 'False',
         'brightness' : 100
       }
-    })
-  },
-  'init' : function(callback){
-    callback(apiCall({
-      'hue' : { 'group' : 'all' }
-    }))
+    }, callback)
   }
 }
 
@@ -83,15 +81,15 @@ function set_computer(color, on){
 }
 
 function lightsOn(){
-  set_lights.on('all');
+  set_lights.on('all', (json)=>console.log('on'));
 }
 function lightsOff(){
-  set_lights.off('all');
+  set_lights.off('all', (json)=>console.log('off'));
 }
 
-function toggleSpecific(isOn, group){
+function toggleSpecific(isOn, group, callback){
   var state = isOn ? 'on' : 'off';
-  set_lights[state](group);
+  set_lights[state](group, callback);
 }
 
 function getCurrent(callback){
@@ -125,9 +123,15 @@ export default class App extends React.Component {
     }
   }
 
+  updateSwitches(responseJson){
+    this.setState({
+      fan: Boolean(responseJson.hue_result.fan.state.all_on),
+      bedroom:Boolean(responseJson.hue_result.bedroom.state.all_on)
+    })
+  }
 
-  componentDidMount(){
-    json = {'hue' : {'group' : 'all'}}
+  getUpdate = () => {
+   json = {'hue' : {'group' : 'all'}}
     fetch('http://73.78.132.90:5000/', {
       method: 'POST',
       headers: {
@@ -139,17 +143,19 @@ export default class App extends React.Component {
     .then(response => response.json())
       .then(responseJson => {
         if(responseJson.hue_result){
-          this.setState({
-            fan: Boolean(responseJson.hue_result.fan.state.all_on),
-            bedroom:Boolean(responseJson.hue_result.bedroom.state.all_on)
-          })
-        return responseJson
-        }
-        else{
-          return {'hue_result' : 'failed'}
+          console.log(responseJson.hue_result.fan.state.all_on)
+          this.updateSwitches(responseJson);
         }
       })
+    .catch(function(error){
+      console.log('Woops the error was: ' + error.message);
+    })
     console.log('hit api');
+  }
+
+
+  componentDidMount(){
+    this.getUpdate();
   }
 
   openModal(){
@@ -161,17 +167,13 @@ export default class App extends React.Component {
     this.setState({modalVisible:false});
   }
 
-  updateUser = (user) => {
-    this.setState({user : user})
-  }
-
   toggleFan = (value) => {
     this.setState({fan:value});
-    toggleSpecific(value, 'fan');
+    toggleSpecific(value, 'fan', (json) => this.updateSwitches(json));
   }
   toggleBedroom = (value) => {
     this.setState({bedroom:value});
-    toggleSpecific(value, 'bedroom');
+    toggleSpecific(value, 'bedroom', (json) => this.updateSwitches(json));
   }
 
 
@@ -196,6 +198,11 @@ export default class App extends React.Component {
               />
               </View>
               <View style={styles.buttonsContainer}>
+              <TouchableOpacity style={styles.button}
+                  onPress={this.getUpdate}
+              >
+              <Icon name="md-refresh" size={30} color="#FFFFFF" />
+              </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
                       onPress={lightsOn}
                   >
@@ -212,11 +219,11 @@ export default class App extends React.Component {
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Computer RGB Remote</Text>
-  <Modal
+            <Modal
               visible={this.state.modalVisible}
               animationType={'slide'}
               onRequestClose={() => this.closeModal(null)}
-          >
+              >
             <View style={styles.modalContainer}>
                   <ColorPicker
                     onColorSelected={color => this.closeModal(color)}
