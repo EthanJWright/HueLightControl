@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text, Dimensions, TouchableOpacity} from 'react-native';
-import { Picker, Button, Alert, Modal } from 'react-native';
+import { Picker, Button, Alert, Modal, Switch } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import Swiper from 'react-native-swiper';
 import Slider from 'react-native-slider';
 
 import { scale, moderateScale, verticalScale} from './scaling';
-import ToggleSwitch from 'toggle-switch-react-native'
 import { ColorPicker, toHsv } from 'react-native-color-picker'
 import rand_string from './rand_strings';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const hexRgb = require('hex-rgb');
 
@@ -19,7 +20,7 @@ var hue_report = {
   }
 }
 
-function apiCall(json){
+function apiCall(json, callback){
   fetch('http://73.78.132.90:5000/', {
     method: 'POST',
     headers: {
@@ -35,6 +36,7 @@ function apiCall(json){
       hue_report.hue.fan = responseJson.hue_result.fan.action.on
       console.log(hue_report.hue.bedroom);
       console.log(hue_report.hue.fan);
+      callback(responseJson);
       return responseJson
       }
       else{
@@ -45,28 +47,23 @@ function apiCall(json){
 }
 
 var set_lights = {
-  'on' : function(group){
+  'on' : function(group, callback){
     apiCall({
       'hue' : {
         'group' : group,
         'on' : 'True',
         'brightness' : 100
       }
-    })
+    }, callback)
   },
-  'off' : function(group){
+  'off' : function(group, callback){
     apiCall({
       'hue' : {
         'group' : group,
         'on' : 'False',
         'brightness' : 100
       }
-    })
-  },
-  'init' : function(callback){
-    callback(apiCall({
-      'hue' : { 'group' : 'all' }
-    }))
+    }, callback)
   }
 }
 
@@ -83,16 +80,16 @@ function set_computer(color, on){
   apiCall(json);
 }
 
-function lightsOn(){
-  set_lights.on('all');
+function lightsOn(callback){
+  set_lights.on('all', callback);
 }
-function lightsOff(){
-  set_lights.off('all');
+function lightsOff(callback){
+  set_lights.off('all', callback);
 }
 
-function toggleSpecific(isOn, group){
+function toggleSpecific(isOn, group, callback){
   var state = isOn ? 'on' : 'off';
-  set_lights[state](group);
+  set_lights[state](group, callback);
 }
 
 function getCurrent(callback){
@@ -114,14 +111,51 @@ function getCurrent(callback){
 }
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      fan : false,
+      bedroom : false,
+      value: 0.2,
+      user: '',
+      modalVisible: false,
+      computer_rgb : '#ffffff'
+    }
+  }
 
-  state = {
-    fan : false,
-    bedroom : false,
-    value: 0.2,
-    user: '',
-    modalVisible: false,
-    computer_rgb : '#ffffff',
+  updateSwitches(responseJson){
+    this.setState({
+      fan: Boolean(responseJson.hue_result.fan.state.all_on),
+      bedroom:Boolean(responseJson.hue_result.bedroom.state.all_on)
+    })
+  }
+
+  getUpdate = () => {
+   json = {'hue' : {'group' : 'all'}}
+    fetch('http://73.78.132.90:5000/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(json),
+    })
+    .then(response => response.json())
+      .then(responseJson => {
+        if(responseJson.hue_result){
+          console.log(responseJson.hue_result.fan.state.all_on)
+          this.updateSwitches(responseJson);
+        }
+      })
+    .catch(function(error){
+      console.log('Woops the error was: ' + error.message);
+    })
+    console.log('hit api');
+  }
+
+
+  componentDidMount(){
+    this.getUpdate();
   }
 
   openModal(){
@@ -133,8 +167,13 @@ export default class App extends React.Component {
     this.setState({modalVisible:false});
   }
 
-  updateUser = (user) => {
-    this.setState({user : user})
+  toggleFan = (value) => {
+    this.setState({fan:value});
+    toggleSpecific(value, 'fan', (json) => this.updateSwitches(json));
+  }
+  toggleBedroom = (value) => {
+    this.setState({bedroom:value});
+    toggleSpecific(value, 'bedroom', (json) => this.updateSwitches(json));
   }
 
 
@@ -144,41 +183,45 @@ export default class App extends React.Component {
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Living Room Remote</Text>
-				<Slider
-				  value={this.state.value}
-				  onValueChange={value => this.setState({ value })}
-				/>
-            <Text style = {styles.text}>Volume: {Math.trunc(this.state.value * 100) / 100}</Text>
               <View style={styles.buttonsContainer}>
-              <Text style={styles.text}>Living Room Light</Text>
-                <ToggleSwitch 
-                  style={styles.slider}
-                  isOn={this.state.fan}
-                  onColor='green'
-                  offColor='red'
-                  labelStyle={{color : 'black', fontWeight: '900'}}
-                  size='large'
-                  onToggle={(isOn) => toggleSpecific(isOn, 'fan')}
-                />
-              <Text style={styles.text}>Bedroom Lights</Text>
-                <ToggleSwitch
-                  style={styles.slider}
-                  isOn={this.state.bedroom}
-                  onColor='green'
-                  offColor='red'
-                  labelStyle={{color : 'black', fontWeight: '900'}}
-                  size='large'
-                  onToggle={(isOn) => toggleSpecific(isOn, 'bedroom')}
-                />
+              <Text style={styles.labelText}>Living Room Lights</Text>
+              <Switch
+                style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }}
+                onValueChange={this.toggleFan}
+                value={this.state.fan}
+              />
+              <Text style={styles.labelText}> Bedroom Lights</Text>
+              <Switch
+                style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }}
+                onValueChange={this.toggleBedroom}
+                value={this.state.bedroom}
+              />
               </View>
               <View style={styles.buttonsContainer}>
+              <TouchableOpacity style={styles.button}
+                  onPress={this.getUpdate}
+              >
+              <Icon name="md-refresh" size={30} color="#FFFFFF" />
+              </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
-                      onPress={lightsOn}
+                      onPress={() => {
+                        lightsOn((json)=>console.log('here'));
+                        this.setState({
+                          'fan' : true,
+                          'bedroom' : true
+                        });
+                      }} 
                   >
                   <Text style={styles.buttonText}>Lights On</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.button}
-                      onPress={lightsOff}
+                      onPress={() => {
+                        lightsOff((json)=>console.log('here'));
+                        this.setState({
+                          'fan' : false,
+                          'bedroom' : false
+                        });
+                      }}
                   >
                   <Text style={styles.buttonText}>Lights Off</Text>
                   </TouchableOpacity>
@@ -188,11 +231,11 @@ export default class App extends React.Component {
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Computer RGB Remote</Text>
-  <Modal
+            <Modal
               visible={this.state.modalVisible}
               animationType={'slide'}
               onRequestClose={() => this.closeModal(null)}
-          >
+              >
             <View style={styles.modalContainer}>
                   <ColorPicker
                     onColorSelected={color => this.closeModal(color)}
@@ -306,6 +349,7 @@ const styles = StyleSheet.create({
         color: 'white'
     },
   labelText:{    
+    padding: 20,
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: moderateScale(14),
@@ -313,6 +357,7 @@ const styles = StyleSheet.create({
     },
   rgbContainer: {
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center'
     },
   modalContainer: {
