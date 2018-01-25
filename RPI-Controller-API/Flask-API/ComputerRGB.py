@@ -7,7 +7,7 @@ class ComputerRGB():
         self.config = _config
 
     def handle_request(self, json):
-        comp_pi = self.config.get('Computer Pi', 'ip')
+        comp_pi = self.config.get('RPI LED', 'ip')
         print(comp_pi)
         url = 'http://' + comp_pi + ':5000/'
         payload = json

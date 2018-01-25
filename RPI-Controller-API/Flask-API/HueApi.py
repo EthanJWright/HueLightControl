@@ -8,7 +8,7 @@ import ConfigParser
 class HueApi():
     def __init__(self):
         self.config = ConfigParser.ConfigParser()
-        self.config.read('api.properties')
+        self.config.read('iot.properties')
         self.hueIP = self.config.get('Hue', 'ip')
         self.hue = HueController.hue_rgb(self.hueIP)
         self.hue.on(False)

@@ -11,8 +11,9 @@ import json
 import ComputerRGB
 
 config = ConfigParser.ConfigParser()
-config.read('api.properties')
-hostIP=config.get('Host', 'ip')
+config.read('iot.properties')
+hostIP=config.get('Controller', 'ip')
+hostIP='0.0.0.0'
 hueApi = HueApi.HueApi()
 
 app = FlaskAPI(__name__)
