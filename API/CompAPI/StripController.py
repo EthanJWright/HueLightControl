@@ -4,7 +4,8 @@ import LED_controller
 import time
 import json
 
-hostIP="192.168.1.8"
+#hostIP="192.168.1.8"
+hostIP="0.0.0.0"
 app = FlaskAPI(__name__)
 led = LED_controller.rgb([5,4,12])
 

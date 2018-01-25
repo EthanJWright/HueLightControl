@@ -1,3 +1,1 @@
-#/bin/bash
-
-python StripController.py -D
+sudo docker run -p 5000:5000 strip-api
