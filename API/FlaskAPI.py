@@ -24,28 +24,10 @@ def logger(information):
 #    f.write(information +  "  Timestamp: " + str(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))  + '\n')
 #    f.close
 
-def get_ip():
-    ip_stuff = {}
-    riv_set = False
-    ethan_set = False
-    # Check results from nmap scan
-    with open('/home/pi/nmap_results.txt') as f:
-        content = f.readlines()
-        content = [x.strip() for x in content]
-        for element in content:
-            if('192.168.1.6' in str(element)):
-                ethan_set = True
-        for element in content:
-            if('192.168.1.7' in str(element)):
-                riv_set = True
-        ip_stuff['Ethan'] = ethan_set
-        ip_stuff['River'] = riv_set
-
-    return ip_stuff
 
 
 def hue_suceeded():
-    return { 'hue_result' : hue.get_all(), 'ip_result' : get_ip() }
+    return { 'hue_result' : hue.get_all(), 'ip_result' : 'none' }
             
 
 def failed(result, payload):
@@ -64,8 +46,30 @@ def get_request():
         if(payload.has_key('computer')):
             comp = ComputerRGB.ComputerRGB(config)
             return_val['computer_result'] = comp.handle_request(payload['computer'])
-        return_val['ip_result'] = get_ip()
+        return_val['ip_result'] = 'none'
         return json.dumps(return_val)
 
 if __name__ == "__main__":
     app.run(host=hostIP)
+
+
+'''
+def get_ip():
+    ip_stuff = {}
+    riv_set = False
+    ethan_set = False
+    # Check results from nmap scan
+    with open('/home/pi/nmap_results.txt') as f:
+        content = f.readlines()
+        content = [x.strip() for x in content]
+        for element in content:
+            if('192.168.1.6' in str(element)):
+                ethan_set = True
+        for element in content:
+            if('192.168.1.7' in str(element)):
+                riv_set = True
+        ip_stuff['Ethan'] = ethan_set
+        ip_stuff['River'] = riv_set
+
+    return ip_stuff
+'''

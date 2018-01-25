@@ -1,0 +1,8 @@
+Flask==0.12.2
+Flask-API==1.0
+colour==0.1.4
+simplejson==3.11.1
+ConfigParser==3.5.0
+logging==0.4.9.6
+phue==1.0
+requests==2.18.4
