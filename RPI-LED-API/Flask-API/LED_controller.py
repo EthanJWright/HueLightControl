@@ -5,8 +5,8 @@ import ConfigParser
 class rgb():
     def __init__(self, _gpio):
         self.config = ConfigParser.ConfigParser()
-        config.read('iot.properties')
-        self.rpi = pigpio.pi(config.get('RPI LED'), 8888)
+        self.config.read('iot.properties')
+        self.rpi = pigpio.pi(self.config.get('RPI LED', 'ip'), 8888)
         self.gpio = _gpio
 
     def set(self, rgb):
