@@ -45,9 +45,13 @@ def get_request():
         if(payload.has_key('hue')):
             return_val['hue_result'] = hueApi.handle_hue(payload['hue'])
         if(payload.has_key('computer')):
-            comp_ip = config.get('RPI LED, 'ip'')
-            comp = ApiHandler.ApiHandler(comp_ip)
+            ip = config.get('RPI LED Computer', 'ip')
+            comp = ApiHandler.ApiHandler(ip)
             return_val['computer_result'] = comp.handle_request(payload['computer'])
+        if(payload.has_key('door')):
+            ip = config.get('RPI LED Door', 'ip')
+            api = ApiHandler.ApiHandler(ip)
+            return_val['door_result'] = api.handle_request(payload['door'])
         return_val['ip_result'] = 'none'
         return json.dumps(return_val)
 
