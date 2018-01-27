@@ -80,6 +80,19 @@ function set_computer(color, on){
   apiCall(json);
 }
 
+function set_door(color, on){
+  rgb = hexRgb(color);
+  rgb_array = [rgb.red, rgb.green, rgb.blue]
+  var json = {
+    'door' : {
+      'brightness' : 100,
+      'rgb' : rgb_array,
+      'on' : on
+    }
+  }
+  apiCall(json);
+}
+
 function lightsOn(callback){
   set_lights.on('all', callback);
 }
@@ -119,7 +132,8 @@ export default class App extends React.Component {
       value: 0.2,
       user: '',
       modalVisible: false,
-      computer_rgb : '#ffffff'
+      computer_rgb : '#ffffff',
+      door_rgb : '#ffffff'
     }
   }
 
@@ -161,10 +175,16 @@ export default class App extends React.Component {
   openModal(){
     this.setState({modalVisible:true});
   }
-  closeModal(color){
-    this.setState({computer_rgb:color});
-    set_computer(color, true)
-    this.setState({modalVisible:false});
+  closeModal(color, location){
+    if(location === 'computer'){
+      this.setState({computer_rgb:color});
+      set_computer(color, true)
+      this.setState({modalVisible:false});
+    }
+  }if(location === 'door'){
+      this.setState({door_rgb:color});
+      set_door(color, true)
+      this.setState({modalVisible:false});
   }
 
   toggleFan = (value) => {
@@ -180,6 +200,7 @@ export default class App extends React.Component {
   render() {
     return (
     <Swiper style={styles.wrapper} showsButtons={false}>
+      /* ---------------------  Start Living Room Remote ------------- */
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Living Room Remote</Text>
@@ -228,6 +249,8 @@ export default class App extends React.Component {
               </View>
           </View>
       </View>
+      /* ---------------------  End Living Room Remote ------------- */
+      /* ---------------------  Start Computer RGB Remote ------------- */
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Computer RGB Remote</Text>
@@ -238,7 +261,7 @@ export default class App extends React.Component {
               >
             <View style={styles.modalContainer}>
                   <ColorPicker
-                    onColorSelected={color => this.closeModal(color)}
+                    onColorSelected={color => this.closeModal(color, 'computer')}
                     style={{flex: 1}}
                   />
             </View>
@@ -275,6 +298,57 @@ export default class App extends React.Component {
 
           </View>
       </View>
+      /* ---------------------  End Computer RGB Remote ------------- */
+      /* ---------------------  Start Door RGB Remote ------------- */
+      <View style={styles.container}>
+          <View style={styles.box}>
+              <Text style={styles.title}>Door RGB Remote</Text>
+            <Modal
+              visible={this.state.modalVisible}
+              animationType={'slide'}
+              onRequestClose={() => this.closeModal(null)}
+              >
+            <View style={styles.modalContainer}>
+                  <ColorPicker
+                    onColorSelected={color => this.closeModal(color, 'door')}
+                    style={{flex: 1}}
+                  />
+            </View>
+          </Modal>
+          <Text style={styles.labelText}>Select RGB Color: </Text>
+              <View style={styles.rgbContainer}>
+              <TouchableOpacity
+                style={{
+                    borderWidth:1,
+                    borderColor:'rgba(0,0,0,0.2)',
+                    alignItems:'center',
+                    justifyContent:'center',
+                    height:150,
+                    width:150,
+                    backgroundColor:this.state.door_rgb,
+                    borderRadius:100,
+                  }}
+              onPress={() => this.openModal()}
+              >
+              </TouchableOpacity>
+              </View>
+              <View style={styles.buttonsContainer}>
+                  <TouchableOpacity style={styles.button}
+                      onPress={() => set_door(this.state.door_rgb, true)}
+                  >
+                  <Text style={styles.buttonText}>Lights On</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button}
+                      onPress={() => set_door(this.state.door_rgb, false)}
+                  >
+                  <Text style={styles.buttonText}>Lights Off</Text>
+                  </TouchableOpacity>
+              </View>
+
+          </View>
+      </View>
+
+      /* ---------------------  End Door RGB Remote ------------- */
     </Swiper>
     );
   }
