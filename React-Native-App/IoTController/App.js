@@ -181,10 +181,13 @@ export default class App extends React.Component {
       set_computer(color, true)
       this.setState({modalVisible:false});
     }
-  }if(location === 'door'){
-      this.setState({door_rgb:color});
-      set_door(color, true)
-      this.setState({modalVisible:false});
+    if(location === 'door'){
+        this.setState({door_rgb:color});
+        set_door(color, true)
+        this.setState({modalVisible:false});
+    }else{
+        this.setState({modalVisible:false});
+    }
   }
 
   toggleFan = (value) => {
@@ -200,7 +203,6 @@ export default class App extends React.Component {
   render() {
     return (
     <Swiper style={styles.wrapper} showsButtons={false}>
-      /* ---------------------  Start Living Room Remote ------------- */
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Living Room Remote</Text>
@@ -249,8 +251,6 @@ export default class App extends React.Component {
               </View>
           </View>
       </View>
-      /* ---------------------  End Living Room Remote ------------- */
-      /* ---------------------  Start Computer RGB Remote ------------- */
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Computer RGB Remote</Text>
@@ -298,8 +298,6 @@ export default class App extends React.Component {
 
           </View>
       </View>
-      /* ---------------------  End Computer RGB Remote ------------- */
-      /* ---------------------  Start Door RGB Remote ------------- */
       <View style={styles.container}>
           <View style={styles.box}>
               <Text style={styles.title}>Door RGB Remote</Text>
@@ -347,8 +345,6 @@ export default class App extends React.Component {
 
           </View>
       </View>
-
-      /* ---------------------  End Door RGB Remote ------------- */
     </Swiper>
     );
   }

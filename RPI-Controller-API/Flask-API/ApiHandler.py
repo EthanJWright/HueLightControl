@@ -1,10 +1,9 @@
 import requests
-import ConfigParser
 
 
-class ComputerRGB():
-    def __init__(self, _config):
-        self.config = _config
+class ApiHandler():
+    def __init__(self, _ip):
+        self.ip = _ip
 
     def handle_request(self, json):
         comp_pi = self.config.get('RPI LED', 'ip')

@@ -8,7 +8,7 @@ import time
 import ConfigParser
 import HueApi
 import json
-import ComputerRGB
+import ApiHandler
 
 config = ConfigParser.ConfigParser()
 config.read('iot.properties')
@@ -45,32 +45,11 @@ def get_request():
         if(payload.has_key('hue')):
             return_val['hue_result'] = hueApi.handle_hue(payload['hue'])
         if(payload.has_key('computer')):
-            comp = ComputerRGB.ComputerRGB(config)
+            comp_ip = config.get('RPI LED, 'ip'')
+            comp = ApiHandler.ApiHandler(comp_ip)
             return_val['computer_result'] = comp.handle_request(payload['computer'])
         return_val['ip_result'] = 'none'
         return json.dumps(return_val)
 
 if __name__ == "__main__":
     app.run(host=hostIP)
-
-
-'''
-def get_ip():
-    ip_stuff = {}
-    riv_set = False
-    ethan_set = False
-    # Check results from nmap scan
-    with open('/home/pi/nmap_results.txt') as f:
-        content = f.readlines()
-        content = [x.strip() for x in content]
-        for element in content:
-            if('192.168.1.6' in str(element)):
-                ethan_set = True
-        for element in content:
-            if('192.168.1.7' in str(element)):
-                riv_set = True
-        ip_stuff['Ethan'] = ethan_set
-        ip_stuff['River'] = riv_set
-
-    return ip_stuff
-'''
