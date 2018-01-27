@@ -15,6 +15,9 @@ class hue_rgb():
         self.lights = []
 
     def convert_rgb(self, red, green, blue):
+        red = red / 255
+        blue = blue / 255
+        green = green / 255
         red = pow((red + 0.055) / (1.0 + 0.055), 2.4) if (red > 0.04045) else(red / 12.92)
         green = pow((green + 0.055) / (1.0 + 0.055), 2.4) if (green > 0.04045) else(green / 12.92)
         blue = pow((blue + 0.055) / (1.0 + 0.055), 2.4) if (blue > 0.04045) else (blue / 12.92)
@@ -57,11 +60,14 @@ class hue_rgb():
             self.set_light_list()
 
     def rgb_set(self, rgb):
+        print('IN SET')
         red = float(rgb[0])
         green = float(rgb[1])
         blue = float(rgb[2])
+        print('IN SET')
 
         point = self.convert_rgb(red, green, blue)
+        print('point is',point)
         x = point[0]
         y = point[1]
         for light in self.lights:

@@ -14,9 +14,8 @@ class HueApi():
         self.hue.on(False)
 
     def set_rgb(self, rgb):
-        rgb = rgb.split(',')
-        rgb = map(float, rgb)
-        hue.rgb_set(rgb)
+        print('In set RGB with value: ', rgb)
+        self.hue.rgb_set(rgb)
 
 
     def hue_on(self, state):
@@ -48,6 +47,7 @@ class HueApi():
         if(payload.has_key('brightness')):
             self.set_brightness(payload['brightness'])
         if(payload.has_key('rgb')):
+            print('HEY RIGHT HERE')
             try:
                 self.set_rgb(payload['rgb'])
             except:

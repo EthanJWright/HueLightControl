@@ -42,6 +42,7 @@ def get_request():
     if request.method == 'POST':
         return_val = {}
         payload = request.get_json(silent=True)
+        print(payload)
         if(payload.has_key('hue')):
             return_val['hue_result'] = hueApi.handle_hue(payload['hue'])
         if(payload.has_key('computer')):
