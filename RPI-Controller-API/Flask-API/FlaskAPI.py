@@ -9,6 +9,7 @@ import ConfigParser
 import HueApi
 import json
 import ApiHandler
+import nmap
 
 config = ConfigParser.ConfigParser()
 config.read('iot.properties')
@@ -24,6 +25,32 @@ def logger(information):
 #    ts = time.time()
 #    f.write(information +  "  Timestamp: " + str(datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S'))  + '\n')
 #    f.close
+def check_if_home(nm):
+    riv, ethan = False, False
+    for h in nm.all_hosts():
+        if 'mac' in nm[h]['addresses']:
+            if(nm[h]['addresses']['mac'] == 'EC:9B:F3:EE:51:4B'):
+                riv = True
+            if(nm[h]['addresses']['mac'] == 'B4:F1:DA:EA:28:DB'):
+                ethan = True
+    return riv,ethan
+
+
+def check_home():
+    nm = nmap.PortScanner()
+    nm.scan(hosts='192.168.1.1/24', arguments='-n -sP')
+    nm.command_line()
+
+    report = [' is not home.', ' is home.']
+    for i in range(0,6):
+        riv,ethan = check_if_home(nm)
+        if(riv and ethan):
+            print("Ethan and River are Home.")
+            return "Ethan and River are Home."
+
+    return "Ethan" + report[int(ethan)] + "\n" +"River" + report[int(riv)]
+
+
 
 
 
@@ -53,7 +80,9 @@ def get_request():
             ip = config.get('RPI LED Door', 'ip')
             api = ApiHandler.ApiHandler(ip)
             return_val['door_result'] = api.handle_request(payload['door'])
-        return_val['ip_result'] = 'none'
+        if(payload.has_key('check_home')):
+            return_val['check_home'] = check_home()
+        print(json.dumps(return_val))
         return json.dumps(return_val)
 
 if __name__ == "__main__":
