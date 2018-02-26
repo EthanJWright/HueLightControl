@@ -31,17 +31,8 @@ function apiCall(json, callback){
   })
   .then(response => response.json())
     .then(responseJson => {
-      if(responseJson.hue_result){
-      hue_report.hue.bedroom = responseJson.hue_result.bedroom.action.on
-      hue_report.hue.fan = responseJson.hue_result.fan.action.on
-      console.log(hue_report.hue.bedroom);
-      console.log(hue_report.hue.fan);
-      callback(responseJson);
-      return responseJson
-      }
-      else{
-        return {'hue_result' : 'failed'}
-      }
+      console.log(responseJson);
+      return responseJson;
     })
   console.log('hit api');
 }
@@ -76,6 +67,30 @@ function set_computer(color, on){
       'rgb' : rgb_array,
       'on' : on
     }
+  }
+  apiCall(json);
+}
+
+function set_all(color, on){
+  rgb = hexRgb(color);
+  rgb_array = [rgb.red, rgb.green, rgb.blue]
+  var json = {
+    'computer' : {
+      'brightness' : 100,
+      'rgb' : rgb_array,
+      'on' : on
+    },
+    'door' : {
+      'brightness' : 100,
+      'rgb' : rgb_array,
+      'on' : on
+    },
+      'hue' : {
+        'group' : 'all',
+        'on' : on,
+        'brightness' : 100,
+        'rgb' : rgb_array
+      }
   }
   apiCall(json);
 }
@@ -131,9 +146,14 @@ export default class App extends React.Component {
       bedroom : false,
       value: 0.2,
       user: '',
-      modalVisible: false,
+      modalVisibleDoor: false,
+      modalVisibleComputer: false,
+      modalVisibleAll: false,
+      hitting: 'computer',
       computer_rgb : '#ffffff',
-      door_rgb : '#ffffff'
+      door_rgb : '#ffffff',
+      all_rgb : '#ffffff',
+      home_string : 'temp'
     }
   }
 
@@ -167,6 +187,23 @@ export default class App extends React.Component {
     console.log('hit api');
   }
 
+ call_back = (value) => {
+   console.log("HERE")
+ }
+ 
+ updateHome(responseJson){
+   this.setState({
+     home_string : responseJson.check_home
+   })
+ }
+
+ check_home = () => {
+  json = {
+    'check_home' : true
+  }
+  apiCall(json, this.updateHome);
+}
+
 
   componentDidMount(){
     this.getUpdate();
@@ -175,18 +212,35 @@ export default class App extends React.Component {
   openModal(){
     this.setState({modalVisible:true});
   }
-  closeModal(color, location){
-    if(location === 'computer'){
+  closeModal(color, key){
+    if(this.state.setting === 'computer'){
       this.setState({computer_rgb:color});
-      set_computer(color, true)
-      this.setState({modalVisible:false});
+      set_computer(color, true);
+      this.setState({modalVisibleComputer:false});
     }
-    if(location === 'door'){
+    if(this.state.setting === 'door'){
         this.setState({door_rgb:color});
-        set_door(color, true)
-        this.setState({modalVisible:false});
-    }else{
-        this.setState({modalVisible:false});
+        set_door(color, true);
+        this.setState({modalVisibleDoor:false});
+    }if(this.state.setting === 'all'){
+      this.setState({computer_rgb:color,door_rgb:color,all_rgb:color});
+      set_all(color, true);
+      this.setState({modalVisibleAll:false});
+    }
+    else{
+        this.setState({modalVisibleDoor:false});
+        this.setState({modalVisibleComputer:false});
+    }
+  }
+
+  openAndSetModal = (value) => {
+    this.setState({setting:value});
+    if(value === 'computer'){
+      this.setState({modalVisibleComputer:true});
+    }if(value === 'door'){
+      this.setState({modalVisibleDoor:true});
+    }if(value === 'all'){
+      this.setState({modalVisibleAll:true});
     }
   }
 
@@ -255,13 +309,14 @@ export default class App extends React.Component {
           <View style={styles.box}>
               <Text style={styles.title}>Computer RGB Remote</Text>
             <Modal
-              visible={this.state.modalVisible}
+              visible={this.state.modalVisibleComputer}
               animationType={'slide'}
               onRequestClose={() => this.closeModal(null)}
               >
             <View style={styles.modalContainer}>
                   <ColorPicker
-                    onColorSelected={color => this.closeModal(color, 'computer')}
+                    defaultColor='#ffff00'
+                    onColorSelected={color => this.closeModal(color)}
                     style={{flex: 1}}
                   />
             </View>
@@ -279,7 +334,7 @@ export default class App extends React.Component {
                     backgroundColor:this.state.computer_rgb,
                     borderRadius:100,
                   }}
-              onPress={() => this.openModal()}
+              onPress={() => this.openAndSetModal('computer')}
               >
               </TouchableOpacity>
               </View>
@@ -302,13 +357,14 @@ export default class App extends React.Component {
           <View style={styles.box}>
               <Text style={styles.title}>Door RGB Remote</Text>
             <Modal
-              visible={this.state.modalVisible}
+              visible={this.state.modalVisibleDoor}
               animationType={'slide'}
               onRequestClose={() => this.closeModal(null)}
               >
             <View style={styles.modalContainer}>
                   <ColorPicker
-                    onColorSelected={color => this.closeModal(color, 'door')}
+                    defaultColor='#ffff00'
+                    onColorSelected={color => this.closeModal(color)}
                     style={{flex: 1}}
                   />
             </View>
@@ -326,7 +382,7 @@ export default class App extends React.Component {
                     backgroundColor:this.state.door_rgb,
                     borderRadius:100,
                   }}
-              onPress={() => this.openModal()}
+              onPress={() => this.openAndSetModal('door')}
               >
               </TouchableOpacity>
               </View>
@@ -343,6 +399,67 @@ export default class App extends React.Component {
                   </TouchableOpacity>
               </View>
 
+          </View>
+      </View>
+      <View style={styles.container}>
+          <View style={styles.box}>
+              <Text style={styles.title}>All Home RGB Remote</Text>
+            <Modal
+              visible={this.state.modalVisibleAll}
+              animationType={'slide'}
+              onRequestClose={() => this.closeModal(null)}
+              >
+            <View style={styles.modalContainer}>
+                  <ColorPicker
+                    defaultColor='#ffff00'
+                    onColorSelected={color => this.closeModal(color)}
+                    style={{flex: 1}}
+                  />
+            </View>
+          </Modal>
+          <Text style={styles.labelText}>Select RGB Color: </Text>
+              <View style={styles.rgbContainer}>
+              <TouchableOpacity
+                style={{
+                    borderWidth:1,
+                    borderColor:'rgba(0,0,0,0.2)',
+                    alignItems:'center',
+                    justifyContent:'center',
+                    height:150,
+                    width:150,
+                    backgroundColor:this.state.all_rgb,
+                    borderRadius:100,
+                  }}
+              onPress={() => this.openAndSetModal('all')}
+              >
+              </TouchableOpacity>
+              </View>
+              <View style={styles.buttonsContainer}>
+                  <TouchableOpacity style={styles.button}
+                      onPress={() => set_all(this.state.all_rgb, true)}
+                  >
+                  <Text style={styles.buttonText}>Lights On</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button}
+                      onPress={() => set_all(this.state.all_rgb, false)}
+                  >
+                  <Text style={styles.buttonText}>Lights Off</Text>
+                  </TouchableOpacity>
+              </View>
+
+          </View>
+      </View>
+      <View style={styles.container}>
+          <View style={styles.box}>
+              <Text style={styles.title}>Who is Home?</Text>
+              <Text style={styles.title}>{this.state.home_string}</Text>
+              <View style={styles.buttonsContainer}>
+                  <TouchableOpacity style={styles.button}
+                      onPress={() => this.check_home}
+                  >
+                  <Text style={styles.buttonText}>Check</Text>
+                  </TouchableOpacity>
+              </View>
           </View>
       </View>
     </Swiper>
